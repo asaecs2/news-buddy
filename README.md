@@ -1,11 +1,25 @@
 # news-buddy
 
-The code implements a news recommendation and discussion system using Python. It begins by allowing the user to input a specific news topic of interest. The system then retrieves relevant articles from a specified source using the News API. The text data is cleaned and preprocessed for analysis.
+The project involves the following components:
 
-To determine the relevance of the articles, the code utilizes BERT, a language model that encodes the user's query and the titles of the articles. Cosine similarity is calculated between the query and each article's title, resulting in similarity scores.
+1. News Articles Retrieval:
+   - Utilizes the News API to fetch top headlines from a specific news source (in this case, 'google-news-in').
+   - The user provides a search query, and the script collects relevant articles based on that query.
 
-The top-ranking articles are presented to the user, along with their titles and URLs. A chatbot, powered by OpenAI, engages in discussions with the user about the articles. The chatbot generates responses based on the conversation history.
+2. Text Processing and Embedding:
+   - Implements data cleaning and preprocessing functions to remove special characters and convert text to lowercase.
+   - Utilizes the BERT model and its associated tokenizer to encode the user's search query and article titles into numerical embeddings.
 
-The user can ask questions or provide comments about each article, and the chatbot responds accordingly. The user can continue the discussion or move to the next recommended article. The loop continues until the user chooses to exit the program or completes the discussion for all the articles.
+3. Similarity Calculation:
+   - Utilizes the cosine similarity metric to calculate the similarity scores between the user's query and each article title.
+   - Sorts the articles based on the similarity scores to identify the most relevant ones.
 
-Overall, the code offers personalized news recommendations and an interactive discussion feature, enhancing the user's engagement and experience with news articles.
+4. Chatbot Integration:
+   - Implements a Chat class that uses the OpenAI API for generating responses to user messages.
+   - Enables users to interact with a coding tutor bot by asking queries related to the recommended articles.
+
+5. User Interface:
+   - Presents the top recommended articles to the user, including their titles and URLs.
+   - Facilitates user interaction by allowing them to ask queries or proceed to the next article.
+
+Overall, this project combines news article retrieval, text processing, similarity calculation, and chatbot integration to provide users with relevant articles based on their search queries.
